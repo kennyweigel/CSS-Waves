@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>css waves</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="sine_wave">
+      <svg width="80" height="40">
+      </svg>
+
+    </div>
+    <script>
+        var svg = document.getElementById('sine_wave').children[0];
+        var origin = { //origin of axes
+            x: 0,
+            y: 20
+        };
+        var amplitude = 20; // wave amplitude
+        var rarity = 4; // point spacing
+        var freq = 0.31415926535897932384626433832795; // angular frequency
+        var phase = 0; // phase angle
+
+        for (var i = 0; i < 21; i++) {
+            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+
+            line.setAttribute('x1', (i - 1) * rarity + origin.x);
+            line.setAttribute('y1', Math.sin(freq * (i - 1 + phase)) * amplitude + origin.y);
+
+            line.setAttribute('x2', i * rarity + origin.x);
+            line.setAttribute('y2', Math.sin(freq * (i + phase)) * amplitude + origin.y);
+
+            line.setAttribute('style', "stroke:red;stroke-width:1");
+
+            svg.appendChild(line);
+        }
+        </script>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
