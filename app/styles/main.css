@@ -27,3 +27,65 @@ body {
   color: #000;
   padding: 0.2em 0;
 }
+
+
+@keyframes scrollBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -80px 0; }
+}
+@-moz-keyframes scrollBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -80px 0; }
+}
+@-webkit-keyframes scrollBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -80px 0; }
+}
+@-ms-keyframes scrollBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -80px 0; }
+}
+@-o-keyframes scrollBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -80px 0; }
+}
+
+.wave-container {
+	position: relative;
+}
+
+.wave1,
+.wave2,
+.wave3,
+.wave4 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 320px;
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	animation: scrollBackground .5s linear infinite;
+	-moz-animation: scrollBackground .5s linear infinite;
+	-webkit-animation: scrollBackground .5s linear infinite;
+	-ms-animation: scrollBackground .5s linear infinite;
+	-o-animation: scrollBackground .5s linear infinite;
+	box-shadow: inset 40px 0px 40px -20px #fff,
+              inset -40px 0px 40px -20px #fff;
+}
+
+.wave1 {
+	background-image: url(/images/wave1.svg);
+}
+
+.wave2 {
+	background-image: url(/images/wave2.svg);
+}
+
+.wave3 {
+	background-image: url(/images/wave3.svg);
+}
+
+.wave4 {
+	background-image: url(/images/wave4.svg);
+}
