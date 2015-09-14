@@ -1,5 +1,5 @@
 (function() {
-	console.log("'Allo 'Allo!");
+	'use strict';
 
 	var element = document.querySelector('.wave-container');
 
